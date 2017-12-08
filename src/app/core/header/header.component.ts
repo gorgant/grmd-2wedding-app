@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  hamburgerStatus = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleHamburger() {
+    this.hamburgerStatus = !this.hamburgerStatus;
+    console.log(this.hamburgerStatus);
   }
 
 }

@@ -1,3 +1,32 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button (click)="toggleHamburger()" class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a routerLink="/" class="navbar-brand">GreMD Wedding</a>
+    </div>
+    <div [ngClass]="{'in': hamburgerStatus}" class="collapse navbar-collapse" id="navbar">
+      <ul (click)="toggleHamburger()" class="nav navbar-nav">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink] = "['/']">Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink] = "['/story']">Our Story</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink] = "['/photos']">Photos</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink] = "['/registry']">Registry</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink] = "['/rsvp']">RSVP</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
