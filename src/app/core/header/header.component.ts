@@ -16,8 +16,9 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleHamburger() {
-    this.hamburgerStatus = !this.hamburgerStatus;
-    console.log(this.hamburgerStatus);
+    if (this.authService.isAuthenticated()) {
+      this.hamburgerStatus = !this.hamburgerStatus;
+    }
   }
 
   checkAuthentication() {

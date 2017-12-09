@@ -15,6 +15,6 @@ export class AuthGuard implements CanActivate, CanLoad {
 
   // Here purely to show how the canLoad feature works
   canLoad(route: Route) {
-    return true;
+    return this.authService.isAuthenticated();
   }
 }
