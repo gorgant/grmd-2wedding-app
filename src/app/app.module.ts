@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
+    // All other components are in their respective feature modules and are loaded when their route is activated
     AppComponent,
   ],
   imports: [
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
     AuthModule,
     CoreModule
   ],
+  // Providers are all stored in the core module
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   hamburgerStatus = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,14 @@ export class HeaderComponent implements OnInit {
   toggleHamburger() {
     this.hamburgerStatus = !this.hamburgerStatus;
     console.log(this.hamburgerStatus);
+  }
+
+  checkAuthentication() {
+    return this.authService.isAuthenticated();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 }
