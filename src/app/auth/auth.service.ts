@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class AuthService {
   token: string;
+  authenticationResponse = new Subject<boolean>();
 
   constructor(private router: Router) {}
 
@@ -46,7 +48,10 @@ export class AuthService {
         }
       )
       .catch(
-        error => console.log(error)
+        error => {
+          console.log(error);
+          this.authenticationResponse.next(false);
+        }
       );
   }
 
