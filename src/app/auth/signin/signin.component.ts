@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit, OnDestroy {
   }
 
   onSignin(form: NgForm) {
-    const email = 'default@test.com';
+    const email = 'root.gregory@gmail.com';
     const password = form.value.passphrase;
     // Should be yeswearestoked
     this.authService.signinUser(email, password);
