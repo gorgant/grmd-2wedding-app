@@ -1,0 +1,5 @@
+:host ::ng-deep .thumbnail {
+    margin-bottom: 0px;
+    border: none;
+    padding: 0px;
+}

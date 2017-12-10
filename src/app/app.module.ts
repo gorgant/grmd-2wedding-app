@@ -1,4 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
+// import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
@@ -14,11 +16,14 @@ import { CoreModule } from './core/core.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    // This animations module is used by the Angular2ImageGalleryModule, and conflicts with the standard BrowserModule (it overrides it)
+    BrowserAnimationsModule,
+    // BrowserModule,
     HttpModule,
     AppRoutingModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    Angular2ImageGalleryModule
   ],
   // Providers are all stored in the core module
   providers: [],
