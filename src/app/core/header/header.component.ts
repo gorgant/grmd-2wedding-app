@@ -1,5 +1,6 @@
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  hamburgerStatus = false;
+  mobileStatus = false;
+  windowWitdth: number;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.windowWitdth = window.innerWidth;
+    console.log(this.windowWitdth);
+    this.setMobileStatus(event);
   }
 
-  toggleHamburger() {
-    if (this.authService.isAuthenticated()) {
-      this.hamburgerStatus = !this.hamburgerStatus;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.windowWitdth = event.target.innerWidth;
+    this.setMobileStatus(this.windowWitdth);
+  }
+
+  setMobileStatus(width) {
+    if (this.windowWitdth < 700) {
+      this.mobileStatus = true;
+    }
+    if (this.windowWitdth > 700) {
+      this.mobileStatus = false;
     }
   }
 
@@ -27,7 +41,6 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
-    this.hamburgerStatus = false;
   }
 
 }
