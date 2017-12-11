@@ -1,0 +1,2 @@
+- Potentially make bottom bar more responsive to small screens (see MD's iPhone)
+- Logistics don't fit
