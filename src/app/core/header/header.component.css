@@ -12,6 +12,10 @@ ul{
   display: inline;
 }
 
+.topnav a {
+  border-right: 1px solid rgb(154, 181, 209);
+}
+
 /* CSS used here will be applied after bootstrap.css */
 .glyphicon {
   display:block;

@@ -1,84 +1,9 @@
-<!-- <nav [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">GreMD Wedding</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a [routerLink] = "['/']">Home</a>
-      </li>
-      <li routerLinkActive="active">
-        <a [routerLink] = "['/story']">Our Story</a>
-      </li>
-      <li routerLinkActive="active">
-        <a [routerLink] = "['/photos']">Photos</a>
-      </li>
-      <li routerLinkActive="active">
-        <a [routerLink] = "['/registry']">Registry</a>
-      </li>
-      <li routerLinkActive="active">
-        <a [routerLink] = "['/rsvp']">RSVP</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a
-          *ngIf="!checkAuthentication()" 
-          routerLink="/signin"
-          >Sign In</a></li>
-      <li>
-        <a 
-          *ngIf="checkAuthentication()" 
-          style="cursor: pointer;" 
-          (click)="onLogout()"
-          >Logout</a>
-      </li>
-    </ul>
+<div [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="topnav">
+  <div class="nav-container">
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink] = "['/']"><span class="glyphicon glyphicon-home" title="Home"></span>Home</a>
+    <a routerLinkActive="active" [routerLink] = "['/logistics']"><span class="glyphicon glyphicon-plane" title="Logistics"></span>Logistics</a>
+    <a routerLinkActive="active" [routerLink] = "['/photos']"><span class="glyphicon glyphicon-camera" title="Photos"></span>Photos</a>
+    <a routerLinkActive="active" [routerLink] = "['/registry']"><span class="glyphicon glyphicon-gift" title="Registry"></span>Registry</a>
+    <a routerLinkActive="active" [routerLink] = "['/rsvp']"><span class="glyphicon glyphicon-envelope" title="Rsvp"></span>RSVP</a>
   </div>
-</nav> -->
-
-<!-- <div [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="topnav">
-  <ul>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <a [routerLink] = "['/']">Home</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink] = "['/story']">Our Story</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink] = "['/photos']">Photos</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink] = "['/registry']">Registry</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink] = "['/rsvp']">RSVP</a>
-    </li>
-  </ul>
-  <ul class="nav navbar-nav navbar-right">
-    <li><a
-        *ngIf="!checkAuthentication()" 
-        routerLink="/signin"
-        >Sign In</a></li>
-    <li>
-      <a 
-        *ngIf="checkAuthentication()" 
-        style="cursor: pointer;" 
-        (click)="onLogout()"
-        >Logout</a>
-    </li>
-  </ul>
-</div> -->
-<!-- <div class="row">
-  <div class="col-12" align="center"> -->
-    <div [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="topnav">
-      <div class="nav-container">
-        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink] = "['/']"><span class="glyphicon glyphicon-home" title="Home"></span>Home</a>
-        <a routerLinkActive="active" [routerLink] = "['/story']"><span class="glyphicon glyphicon-heart-empty" title="Story"></span>Story</a>
-        <a routerLinkActive="active" [routerLink] = "['/photos']"><span class="glyphicon glyphicon-camera" title="Photos"></span>Photos</a>
-        <a routerLinkActive="active" [routerLink] = "['/registry']"><span class="glyphicon glyphicon-gift" title="Registry"></span>Registry</a>
-        <a routerLinkActive="active" [routerLink] = "['/rsvp']"><span class="glyphicon glyphicon-envelope" title="Rsvp"></span>RSVP</a>
-      </div>
-    </div>
-  <!-- </div>
-</div> -->
-
+</div>
