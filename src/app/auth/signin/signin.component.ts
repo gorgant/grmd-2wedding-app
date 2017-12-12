@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -13,7 +14,9 @@ export class SigninComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   authStatus = true;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     this.subscription = this.authService.authenticationResponse
@@ -22,6 +25,9 @@ export class SigninComponent implements OnInit, OnDestroy {
           this.authStatus = status;
         }
       );
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/home']);
+    }
   }
 
   onSignin(form: NgForm) {

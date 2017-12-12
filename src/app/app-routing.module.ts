@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { HomeComponent } from './core/home/home.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'logistics', loadChildren: './logistics/logistics.module#LogisticsModule', canActivate: [AuthGuard] },
   { path: 'photos', loadChildren: './photos/photos.module#PhotosModule', canActivate: [AuthGuard] },
   { path: 'registry', loadChildren: './registry/registry.module#RegistryModule', canActivate: [AuthGuard] },
