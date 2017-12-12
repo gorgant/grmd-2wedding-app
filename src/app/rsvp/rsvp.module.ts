@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { RsvpRoutingModule } from './rsvp-routing.module';
   ],
   imports: [
     CommonModule,
-    RsvpRoutingModule
+    RsvpRoutingModule,
+    FormsModule
   ]
 })
 export class RsvpModule {}
