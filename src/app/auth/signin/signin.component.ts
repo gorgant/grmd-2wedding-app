@@ -1,16 +1,17 @@
 import { Router } from '@angular/router';
-import { AuthService } from './../auth.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
+import { AuthService } from './../auth.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit, OnDestroy {
+export class SigninComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  @ViewChild('passphraseInput') input: ElementRef;
   subscription: Subscription;
   authStatus = true;
 
@@ -30,10 +31,13 @@ export class SigninComponent implements OnInit, OnDestroy {
     }
   }
 
+  ngAfterViewInit() {
+    this.input.nativeElement.focus();
+  }
+
   onSignin(form: NgForm) {
     const email = 'root.gregory@gmail.com';
     const password = form.value.passphrase;
-    // Should be yeswearestoked
     this.authService.signinUser(email, password);
   }
 

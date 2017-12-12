@@ -13,7 +13,8 @@
           id="passphrase" 
           name="passphrase"
           required
-          ngModel>
+          ngModel
+          #passphraseInput>
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Let Me In!</button>
       <span class="help-block" *ngIf="!authStatus">Incorrect passphrase -- try again.</span>
