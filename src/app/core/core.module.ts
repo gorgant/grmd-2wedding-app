@@ -8,6 +8,8 @@ import { AppRoutingModule } from './../app-routing.module';
 
 import { AuthGuard } from './../auth/auth-guard.service';
 import { AuthService } from './../auth/auth.service';
+import { RsvpService } from './../rsvp/rsvp.service';
+import { DataStorageService } from './../shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AuthService } from './../auth/auth.service';
   providers: [
     // Angular will load one instance of all of these for the app as long as this core module is loaded eagerly
     AuthService,
-    AuthGuard
+    AuthGuard,
+    RsvpService,
+    DataStorageService
   ]
 })
 export class CoreModule {}
