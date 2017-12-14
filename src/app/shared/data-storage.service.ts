@@ -18,7 +18,7 @@ export class DataStorageService {
     const rsvpForm = this.rsvpService.getRsvpForm();
     const headers = new Headers({'Content-Type': 'application/json'});
     return this.http.post(
-      'https://gremd-wedding-app.firebaseio.com/rsvp-test.json?auth=' + token,
+      'https://gremd-wedding-app.firebaseio.com/rsvp-foreelz.json?auth=' + token,
       rsvpForm,
       {headers: headers});
   }
