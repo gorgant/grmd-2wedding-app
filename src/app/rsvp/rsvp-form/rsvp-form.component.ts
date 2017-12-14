@@ -28,13 +28,24 @@ export class RsvpFormComponent implements OnInit, OnDestroy {
   onSubmit(form: NgForm) {
     const values = form.value;
     const timeStamp = Date.now();
+    const firstName = values.firstName.trim();
+    const lastName = values.lastName.trim();
+    const email = values.email.trim();
+    let guestFirstName: string;
+    let guestLastName: string;
+    let guestEmail: string;
+    if (this.rsvpType === 'double') {
+      guestFirstName = values.guestFirstName.trim();
+      guestLastName = values.guestLastName.trim();
+      guestEmail = values.guestEmail.trim();
+    }
     const rsvpForm = new RsvpForm(
-      values.firstName,
-      values.lastName,
-      values.email,
-      values.guestFirstName,
-      values.guestLastName,
-      values.guestEmail,
+      firstName,
+      lastName,
+      email,
+      guestFirstName,
+      guestLastName,
+      guestEmail,
       timeStamp);
     this.rsvpService.setRsvpForm(rsvpForm);
     this.dataStorageService.storeRsvp()

@@ -1,4 +1,3 @@
-- scrub spaces from RSVP submissions
 - Host on our new domain
 - Local session token so no need to keep entering in password
 - Registery
