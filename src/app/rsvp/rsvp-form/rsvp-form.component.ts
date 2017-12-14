@@ -40,7 +40,7 @@ export class RsvpFormComponent implements OnInit, OnDestroy {
     this.dataStorageService.storeRsvp()
       .subscribe(
         (response: Response) => {
-          this.router.navigate(['rsvp/success']);
+          this.router.navigate(['success'], {relativeTo: this.route});
           console.log(response);
         },
         (error) => console.log(error)
