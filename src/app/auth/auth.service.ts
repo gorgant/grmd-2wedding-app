@@ -43,7 +43,11 @@ export class AuthService {
           this.router.navigate(['/']);
           firebase.auth().currentUser.getIdToken()
             .then(
-              (token: string) => this.token = token
+              (token: string) => {
+                this.token = token;
+                sessionStorage.setItem('id_token', token);
+                console.log('id_token stored');
+              }
             );
         }
       )
@@ -65,6 +69,7 @@ export class AuthService {
     // This is an asynchronous call because not only does it fetch from local storage (synchronous)
     // ... it also pings Firebase server to ensure the token hasn't expired
     // ... if expired we'd need to implement some error handling to get the user to try again
+    console.log('attempting to fetch token');
     firebase.auth().currentUser.getIdToken()
       .then(
         (token: string) => this.token = token
@@ -73,6 +78,13 @@ export class AuthService {
   }
 
   isAuthenticated() {
+    console.log('verifying authentication');
+    if (!this.token) {
+      if ( sessionStorage.getItem('id_token')) {
+        console.log('searching session storage');
+        this.token = sessionStorage.getItem('id_token');
+      }
+    }
     return this.token != null;
   }
 
