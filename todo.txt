@@ -1,3 +1,2 @@
-- Adjust pre-loading strategy so that it doesn't load the other pages until we're authenticated
 - Admin panel for reporting
 - Registery
