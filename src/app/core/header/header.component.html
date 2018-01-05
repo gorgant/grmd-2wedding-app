@@ -1,9 +1,14 @@
-<div [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="topnav">
-  <div class="nav-container">
-    <a routerLinkActive="active" [routerLink] = "['/home']"><span class="glyphicon glyphicon-home" title="Home"></span>Home</a>
-    <a routerLinkActive="active" [routerLink] = "['/logistics']"><span class="glyphicon glyphicon-plane" title="Logistics"></span>Logistics</a>
-    <a routerLinkActive="active" [routerLink] = "['/photos']"><span class="glyphicon glyphicon-camera" title="Photos"></span>Photos</a>
-    <a routerLinkActive="active" [routerLink] = "['/registry']"><span class="glyphicon glyphicon-gift" title="Registry"></span>Registry</a>
-    <a routerLinkActive="active" [routerLink] = "['/rsvp']"><span class="glyphicon glyphicon-envelope" title="Rsvp"></span>RSVP</a>
+
+<div class="row">
+  <div class="col-md-12">
+    <div [ngClass]="{'navbar-fixed-bottom': mobileStatus}" class="topnav">
+      <div class="nav-container">
+        <a routerLinkActive="active" [routerLink] = "['/home']"><span class="glyphicon glyphicon-home" title="Home"></span>Home</a>
+        <a routerLinkActive="active" [routerLink] = "['/logistics']"><span class="glyphicon glyphicon-plane" title="Logistics"></span>Logistics</a>
+        <a routerLinkActive="active" [routerLink] = "['/photos']"><span class="glyphicon glyphicon-camera" title="Photos"></span>Photos</a>
+        <a routerLinkActive="active" [routerLink] = "['/registry']"><span class="glyphicon glyphicon-gift" title="Registry"></span>Registry</a>
+        <a routerLinkActive="active" [routerLink] = "['/rsvp']"><span class="glyphicon glyphicon-envelope" title="Rsvp"></span>RSVP</a>
+      </div>
+    </div>
   </div>
 </div>
